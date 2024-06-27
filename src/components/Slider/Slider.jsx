@@ -2,6 +2,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./Slider.css"
 
 const Slider = () => {
   const [movieData, setMovieData] = useState([]);
@@ -15,16 +16,18 @@ const Slider = () => {
       console.log(data);
       setMovieData(data.results);
     };
-
     fetchData();
   }, []);
 
   return (
-    // <>
-
-    // </>
     <>
-      <Carousel autoPlay={true} infiniteLoop={true} showThumbs={true}>
+      <Carousel
+        autoPlay={true}
+        infiniteLoop={true}
+        showThumbs={true}
+        showStatus={false}
+        transitionTime={3}
+      >
         {movieData.map((movie) => {
           return (
             <Link key={movie.id} className="poster__container" to={"/"}>
@@ -35,15 +38,10 @@ const Slider = () => {
                 />
               </div>
               <div className="poster__overlay">
-                <div className="poster__title">Movie ABC</div>
-                <div className="poster__runtime">
-                  <div className="movie__runtime">2024</div>
-                  <div className="movie__rating">5 Starts</div>
-                </div>
+                <div className="movie__title">{movie.title}</div>
+                <div className="movie__runtime">{movie.release_date} <span className="movie__rating" >{movie.vote_average} ⭐</span> </div>
                 <div className="movie__description">
-                  asfmaspld apldpasldpasld apldpaspdl asfmaspld apldpasldpasld
-                  apldpaspdlasfmaspld apldpasldpasld apldpaspdlasfmaspld
-                  apldpasldpasld apldpaspdlasfmaspld apldpasldpasld apldpaspdl
+                  {movie.overview}
                 </div>
               </div>
             </Link>
