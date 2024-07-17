@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bootcamp-3901-popcorn/static/css/main.4cb4674e.css",
+    "main.js": "/bootcamp-3901-popcorn/static/js/main.783dcca9.js",
+    "index.html": "/bootcamp-3901-popcorn/index.html",
+    "main.4cb4674e.css.map": "/bootcamp-3901-popcorn/static/css/main.4cb4674e.css.map",
+    "main.783dcca9.js.map": "/bootcamp-3901-popcorn/static/js/main.783dcca9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4cb4674e.css",
+    "static/js/main.783dcca9.js"
+  ]
+}
