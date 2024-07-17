@@ -8,11 +8,11 @@ import MovieList from './components/MovieList/MovieList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}  >
     <Navbar />
     <Routes>
       <Route path='/' element={<HomePage />} />
-      <Route path='/movies/:type' element={<MovieList />}  />
+      <Route path='/movies/:type' element={<MovieList />} />
     </Routes>
   </BrowserRouter>
 );
